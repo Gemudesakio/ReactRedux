@@ -3,6 +3,7 @@ import React from "react";
 import Store from "./pages/Store";
 import NotFound from "./pages/NotFound";
 import StandardLayout from "./layouts/StandardLayout";
+import "./App.css";
 
 const router = createBrowserRouter([
   {
