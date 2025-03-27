@@ -1,16 +1,18 @@
-const SearchBar = ({
-  category,
-  handleCategoryChange,
-  search,
-  handleSearchChange,
-}) => {
+import { useDispatch, useSelector } from "react-redux";
+import { changeCategory, changeSearch } from "../../store/actions/shopActions";
+
+const SearchBar = () => {
+  const search =useSelector((state)=>state.shop.search)
+  const category=useSelector((state)=>state.shop.category)
+  const dispatch = useDispatch()
+
   return (
     <div style={styles.container}>
       <label style={styles.label}>
         Categoría:
         <select
           value={category}
-          onChange={(e) => handleCategoryChange(e.target.value)}
+          onChange={(e) => dispatch(changeCategory(e.target.value))}
           style={styles.select}
         >
           <option value="Todas">Todas</option>
@@ -25,7 +27,7 @@ const SearchBar = ({
         <input
           type="text"
           value={search}
-          onChange={(e) => handleSearchChange(e.target.value)}
+          onChange={(e) => dispatch(changeSearch(e.target.value))}
           placeholder="Buscar productos..."
           style={styles.input}
         />

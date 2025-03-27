@@ -1,4 +1,10 @@
-const ItemsContainer = ({ items, category, search }) => {
+import { useSelector } from "react-redux";
+
+const ItemsContainer = () => {
+ const search= useSelector((state)=>state.shop.search)
+ const items = useSelector((state)=>state.shop.products)
+ const category=useSelector((state)=>state.shop.category)
+
   const filteredItems = items.filter((item) => {
     const matchesCategory = category === "Todas" || item.category === category;
     const matchesSearch = item.name

@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import React from "react";
-import Store from "./pages/Store";
+import Tienda from "./pages/Tienda";
 import NotFound from "./pages/NotFound";
 import StandardLayout from "./layouts/StandardLayout";
 import "./App.css";
@@ -11,11 +11,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/store",
-        element: <Store />,
+        element: <Tienda />,
       },
       {
         path: "/",
-        element: <Store />,
+        element: <Tienda />,
       },
     ],
   },
